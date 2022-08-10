@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import BaseInput from './components/BaseInput.vue'
+
+import { ref } from 'vue'
+
+const secretName = ref("");
 </script>
 
 <template>
@@ -9,6 +14,7 @@ import HelloWorld from './components/HelloWorld.vue'
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
+      <BaseInput v-model="secretName"/>
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
