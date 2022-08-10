@@ -1,2 +1,0 @@
-# Codersrank-secretserver
- 
