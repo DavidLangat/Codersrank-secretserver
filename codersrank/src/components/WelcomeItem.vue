@@ -1,17 +1,24 @@
 <template>
   <div class="item">
-    <i>
-      <slot name="icon"></slot>
-    </i>
-    <div class="details">
-      <h3>
-        <slot name="heading"></slot>
-      </h3>
-      <slot></slot>
-    </div>
+  
   </div>
 </template>
+<script >
+import Vue from 'vue';
+import axios from 'axios';
+import VueAxios from 'vue-axios';
 
+export default{
+  name: "Message",
+  setup() {
+    const users = ref(null);
+    const usersRespond = fetch('https://secretmessage-16452-default-rtdb.firebaseio.com/');
+    users.value = await usersRespond.json();
+    return { users }
+     }
+  }
+
+</script>
 <style scoped>
 .item {
   margin-top: 2rem;
